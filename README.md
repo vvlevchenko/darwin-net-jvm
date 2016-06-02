@@ -2,12 +2,12 @@
 fixed build of libnet.dylib to work with IPv6 on macosx
 
 How to compile:
-1. mkdir jvm
-2. pushd jvm;hg clone http://hg.openjdk.java.net/jdk8u/jdk8u;cd jdk8u;sh get_source.sh .
-3. popd
-4. git clone git@github.com:vvlevchenko/darwin-net-jvm.git
-5. pushd darwin-net-jvm
-6. JVMSOURCE=../jdk8u make clean
+- mkdir jvm
+- pushd jvm;hg clone http://hg.openjdk.java.net/jdk8u/jdk8u;cd jdk8u;sh get_source.sh .
+- popd
+- git clone git@github.com:vvlevchenko/darwin-net-jvm.git
+- pushd darwin-net-jvm
+- JVMSOURCE=../jdk8u make clean
 
 USAGE:
 	DYLD_LIBRARY_PATH=darwin-net-jvm java -cp ....
@@ -34,7 +34,7 @@ Example:
 	}
 
 RUN:
-	0:ws-merger:minamoto@minamoto-osx-pro(0)# /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin/java -cp ../target/classes junk.minamoto.IPv6Test
+	0# /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin/java -cp ../target/classes junk.minamoto.IPv6Test
 	Exception in thread "main" java.net.NoRouteToHostException: No route to host
         at java.net.PlainSocketImpl.socketConnect(Native Method)
         at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
@@ -46,6 +46,8 @@ RUN:
         at java.net.Socket.<init>(Socket.java:434)
         at java.net.Socket.<init>(Socket.java:328)
         at junk.minamoto.IPv6Test.main(IPv6Test.java:15)
-	0:ws-merger:minamoto@minamoto-osx-pro(0)# DYLD_LIBRARY_PATH=${HOME}/ws/ipv6 /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin/java -cp ../target/classes junk.minamoto.IPv6Test
+
+
+	0# DYLD_LIBRARY_PATH=${HOME}/ws/ipv6 /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin/java -cp ../target/classes junk.minamoto.IPv6Test
 
 with compiled version no exceptions occured. :)
