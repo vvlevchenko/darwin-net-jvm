@@ -28,12 +28,13 @@ Example:
 		public static void main(String[] arg) throws Exception {
 			InetAddress addr = InetAddress.getByName("2a02:6b8:a::a"); /* yandex.ru */
 			Inet6Address addr6 = (Inet6Address)addr;
-			InetAddress inetAddress = Inet6Address.getByAddress(addr6.getHostAddress(), addr6.getAddress()/*, NetworkInterface.getByName("tap0")*/);
+			InetAddress inetAddress = Inet6Address.getByAddress(addr6.getHostAddress(), addr6.getAddress());
 			Socket socket = new Socket(inetAddress, 80, null, 0);
 		}
 	}
 
 RUN:
+
 	0# /Library/Java/JavaVirtualMachines/jdk1.8.0_92.jdk/Contents/Home/bin/java -cp ../target/classes junk.minamoto.IPv6Test
 	Exception in thread "main" java.net.NoRouteToHostException: No route to host
         at java.net.PlainSocketImpl.socketConnect(Native Method)
