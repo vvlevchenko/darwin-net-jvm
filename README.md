@@ -10,7 +10,7 @@ How to compile:
 - JVMSOURCE=../jdk8u make clean
 
 USAGE:
-	DYLD_LIBRARY_PATH=darwin-net-jvm java -cp ....
+	DYLD_LIBRARY_PATH=<path-to-libnet.dylib> java -cp ....
 
 
 Example:
