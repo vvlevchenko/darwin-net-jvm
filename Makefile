@@ -12,6 +12,7 @@ CFLAGS+=-I${JVMSOURCE}/jdk/src/share/native/java/net
 CFLAGS+=-I${JVMSOURCE}/jdk/src/solaris/native/java/net
 CFLAGS+=-D_ALLBSD_SOURCE -DNDEBUG
 LDFLAGS+=-L${JVM_HOME}/jre/lib -ljava -L${JVM_HOME}/jre/lib/server -ljvm
+LDFLAGS+=-compatibility_version 1.0.0 -current_version 1.0.0
 
 
 _SOURCES=  jdk/src/share/native/java/net/Inet4Address.c \
