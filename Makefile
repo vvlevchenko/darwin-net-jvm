@@ -31,7 +31,8 @@ _SOURCES=  jdk/src/share/native/java/net/Inet4Address.c \
 	jdk/src/share/native/common/jni_util.c \
 	jdk/src/solaris/native/common/jni_util_md.c \
 	jdk/src/share/native/java/net/net_util.c \
-	jdk/src/solaris/native/java/net/net_util_md.c
+	jdk/src/solaris/native/java/net/net_util_md.c \
+	jdk/src/solaris/native/java/net/ExtendedOptionsImpl.c
 
 NATIVES= \
 	java.net.Inet4Address \
@@ -46,7 +47,11 @@ NATIVES= \
 	java.net.SocketInputStream \
 	java.net.DatagramPacket \
 	java.net.PlainDatagramSocketImpl \
-	java.net.PlainSocketImpl
+	java.net.PlainSocketImpl \
+	sun.net.ExtendedOptionsImpl \
+	jdk.net.SocketFlow \
+	java.net.PlainSocketImpl \
+	java.net.SocketOptions
 
 HEADERS=$(foreach h,$(NATIVES), build/$(subst .,_,$h).h)
 
